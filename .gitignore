@@ -33,4 +33,5 @@
 
 *.txt
 *.pdb
+*.ilk
 **/.vscode
