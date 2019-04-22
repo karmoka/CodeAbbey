@@ -98,7 +98,7 @@ int main()
             // second = prefixMap[currentPrefix][index].first;
             currentPrefix = first + second;
             cnt += 1;
-            // if (cnt > max) break;
+            if (cnt > max) break;
         }
         out << first + second << endl;
         out.close();
