@@ -11,6 +11,8 @@
 
 using namespace std;
 
+int NUM_FILES = 1;
+
 string readFileToString(string fileName) {
     ifstream in(fileName);
     string line;
@@ -84,7 +86,7 @@ int main()
 
     
     int max = 100000;
-    for (int i = 0; i < 1; ++i) {
+    for (int i = 0; i < NUM_FILES; ++i) {
         ofstream out("output/out" + to_string(i) + ".txt");
         string first = words[0];
         string second = words[1];
@@ -93,9 +95,7 @@ int main()
         while (prefixMap[currentPrefix].size() != 0) {
             out << first;
             first = second;
-            // int index = rand_(0, prefixMap[currentPrefix].size() - 1);
             second = chooseNext(prefixMap[currentPrefix]);
-            // second = prefixMap[currentPrefix][index].first;
             currentPrefix = first + second;
             cnt += 1;
             if (cnt > max) break;
